@@ -1,4 +1,6 @@
-Welcome to SmartCare 👋
+# Welcome to SmartCare 👋
+
+A HealthCare Management System
 
 ## Getting Started
 
