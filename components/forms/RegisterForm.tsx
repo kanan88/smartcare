@@ -63,7 +63,6 @@ const RegisterForm = ({ user }: { user: User }) => {
         identificationDocument: formData,
       };
 
-      // @ts-expect-error
       const patient = await registerPatient(patientData);
 
       if (patient) router.push(`/patients/${user.$id}/new-appointment`);
