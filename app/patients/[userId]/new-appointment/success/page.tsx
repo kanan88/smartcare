@@ -46,25 +46,34 @@ const Success = async ({
         <section className="request-details">
           <p>Requested appointment details:</p>
 
-          <div className="flex flex-items-center gap-3">
-            <Image
-              src={doctor?.image!}
-              alt="doctor"
-              width={100}
-              height={100}
-              className="size-6"
-            />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
-          </div>
-          <div className="flex gap-2">
-            <Image
-              src="/assets/icons/calendar.svg"
-              alt="calendar"
-              height={24}
-              width={24}
-            />
-            <p>{formatDateTime(appointment.schedule).dateTime}</p>
-          </div>
+          {doctor ? (
+            <div className="flex flex-items-center gap-3">
+              <Image
+                src={doctor.image || ""}
+                alt={`Dr. ${doctor.name}`}
+                width={100}
+                height={100}
+                className="size-6"
+              />
+              <p className="whitespace-nowrap">Dr. {doctor.name}</p>
+            </div>
+          ) : (
+            <p>Doctor information not available</p>
+          )}
+
+          {appointment?.schedule ? (
+            <div className="flex gap-2">
+              <Image
+                src="/assets/icons/calendar.svg"
+                alt="calendar"
+                height={24}
+                width={24}
+              />
+              <p>{formatDateTime(appointment.schedule).dateTime}</p>
+            </div>
+          ) : (
+            <p>Schedule information not available</p>
+          )}
         </section>
 
         <Button variant="outline" className="shad-primary-btn" asChild>
