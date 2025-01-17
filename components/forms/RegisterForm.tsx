@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form, FormControl } from "@/components/ui/form";
 import CustomFormField from "../CustomFormField";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { PatientFormValidation } from "@/lib/validation";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -343,7 +343,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           label="I consent to privacy policy"
         />
 
-        <SubmitButton isLoading={isLoading}>Get started</SubmitButton>
+        <SubmitButton isLoading={isLoading}>Submit and Continue</SubmitButton>
       </form>
     </Form>
   );

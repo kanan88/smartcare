@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
 import CustomFormField from "../CustomFormField";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { getAppointmentSchema } from "@/lib/validation";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
